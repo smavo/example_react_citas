@@ -3,15 +3,12 @@ import PropTypes from 'prop-types';
 
 function TareasList({tarea,eliminarTarea}) {
 
-    const { todo, usuario, fecha, hora, descripcion } = tarea;
+    const { todo, descripcion } = tarea;
 
     return (
         <>
             <div className="tarea">
                 <p>Tarea        : <span>{todo}</span> </p>
-                <p>Usuario      : <span>{usuario}</span> </p>
-                <p>Fecha        : <span>{fecha}</span> </p>
-                <p>Hora         : <span>{hora}</span> </p>
                 <p>Descripcion  : <span>{descripcion}</span> </p>
             </div>
 

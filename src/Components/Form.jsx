@@ -7,11 +7,8 @@ function Form({ crearTarea }) {
 
     // Crear Tareas
     const [tarea, actualizarTarea] = useState({
-        todo: "",
-        usuario: "",
-        fecha: "",
-        hora: "",
-        descripcion: ""
+        todo: '',
+        descripcion: ''
     });
 
     const [error, actualizarError] = useState(false)
@@ -23,7 +20,7 @@ function Form({ crearTarea }) {
         })
     }
 
-    const { todo, usuario, fecha, hora, descripcion } = tarea;
+    const { todo, descripcion } = tarea;
 
 
     const submitTarea = (e) => {
@@ -32,7 +29,7 @@ function Form({ crearTarea }) {
         //console.log(todo);
 
         // Validacion de campos
-        if (todo.trim() === '' || usuario.trim() === '' || fecha.trim() === '' || hora.trim() === '' || descripcion.trim() === '') {
+        if (todo.trim() === '' || descripcion.trim() === '') {
             //console.log("Los campos estan sin completar");
             actualizarError(true);
             return;
@@ -51,9 +48,6 @@ function Form({ crearTarea }) {
         // Limpiar Formulario
         actualizarTarea({
             todo: "",
-            usuario: "",
-            fecha: "",
-            hora: "",
             descripcion: ""
         }
         )
@@ -73,34 +67,6 @@ function Form({ crearTarea }) {
                     placeholder="Ingrese la tarea"
                     onChange={actualizarState}
                     value={todo}
-                />
-
-                <label>Usario</label>
-                <input
-                    type="text"
-                    name="usuario"
-                    className="u-full-width"
-                    placeholder="Nombre del usuario"
-                    onChange={actualizarState}
-                    value={usuario}
-                />
-
-                <label>Fecha</label>
-                <input
-                    type="date"
-                    name="fecha"
-                    className="u-full-width"
-                    onChange={actualizarState}
-                    value={fecha}
-                />
-
-                <label>Hora</label>
-                <input
-                    type="time"
-                    name="hora"
-                    className="u-full-width"
-                    onChange={actualizarState}
-                    value={hora}
                 />
 
                 <label>Descripcion</label>
